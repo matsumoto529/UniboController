@@ -1,0 +1,48 @@
+body{
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'  
+}
+
+.controller_all{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+.form_conf{
+    display: inline-block;
+    vertical-align: auto;
+    position: relative;
+}
+
+.div_connect{
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    width: 220px;
+}
+.div_visit{
+    position: absolute;
+    top: 0px;
+    left: 250px;
+    width: 220px;
+}
+.div_discharge{
+    position: absolute;
+    top: 0px;
+    left: 470px;
+    width: 220px;
+}
+.div_utterance{
+    position: absolute;
+    top: 0px;
+    left: 690px;
+    width: 220px;
+}
+
+h1{
+    margin-left: 30px;
+}
+h2, .title{
+    background-color: aqua;
+}
+input{
+    margin-top: 15px;
+}
