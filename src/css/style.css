@@ -36,12 +36,36 @@ body{
     left: 690px;
     width: 220px;
 }
+.text_size{
+    font-size: 20px;
+}
+input.text_size{
+    position: relative;
+    display: block;
+    height: 60px;
+	width: 160px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+	background: #1e90ff;
+	border-bottom: 2px solid #00838F;
+	border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+input.text_size:active{
+    border-bottom: 2px solid #1e90ff;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
 
 h1{
     margin-left: 30px;
 }
-h2, .title{
-    background-color: aqua;
+h2{
+    color: #1e90ff;
+}
+.title{
+    background-color: #1e90ff;
+    color: #ffffff;
 }
 input{
     margin-top: 15px;
