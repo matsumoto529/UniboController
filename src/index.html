@@ -4,6 +4,19 @@
         <meta charset="utf-8">
         <title>Uniboコントローラ</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="js/index.js">
+        <script>
+            function connect(){
+            var ip = document.getElementById('uniboIP').value;
+            console.log(ip);
+            var url = "http://" + ip + ":8080/api/talk";
+            console.log(url);
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", connect);
+            oReq.open("POST", url);
+            oReq.send();
+        }
+        </script>
     </head>
     <body>
         <div class="title">
@@ -15,9 +28,9 @@
                     <h2>Unibo接続</h2>
                     <div>
                         <label class="text_size">IPアドレス</label><br>
-                        <input type="text">
+                        <div><input type="text" id="uniboIP"></div>
                         <p>（接続状態のものがくる）</p>
-                        <input type="submit" value="接続テスト" id="connected" class="text_size">
+                        <input type="button" value="接続テスト" onclick="connect()" class="text_size">
                     </div>
                 </div>
             </form>
@@ -25,7 +38,7 @@
                 <div class="div_visit">
                     <h2>来院時発話</h2>
                     <div>
-                        <input type="submit" value="こんにちは" class="text_size">
+                        <input type="button" value="こんにちは" class="text_size">
                     </div>
                 </div>
             </form>
@@ -33,7 +46,7 @@
                 <div class="div_discharge">
                     <h2>退院時発話</h2>
                     <div>
-                        <input type="submit" value="さようなら" class="text_size">
+                        <input type="button" value="さようなら" class="text_size">
                     </div>
                 </div>
             </form>
