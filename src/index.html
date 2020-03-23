@@ -1,9 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
-
+        <meta charset="utf-8">
+        <title>Uniboコントローラ</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        
+        <div class="title">
+            <h1 class="header_title">Uniboコントローラ</h1>
+        </div>
+        <div class="controller_all">
+            <form class="form_conf">
+                <div class="div_connect">
+                    <h2>Unibo接続</h2>
+                    <div>
+                        <label>IPアドレス</label><br>
+                        <input type="text">
+                        <p>（接続状態のものがくる）</p>
+                        <input type="submit" name="接続テスト">
+                    </div>
+                </div>
+            </form>
+            <form class="form_conf">
+                <div class="div_visit">
+                    <h2>来院時発話</h2>
+                    <div>
+                        <input type="submit" value="こんにちは">
+                    </div>
+                </div>
+            </form>
+            <form class="form_conf">
+                <div class="div_discharge">
+                    <h2>退院時発話</h2>
+                    <div>
+                        <input type="submit" value="さようなら">
+                    </div>
+                </div>
+            </form>
+            <form class="form_conf">
+                <div class="div_utterance">
+                    <h2>自由発話</h2>
+                    <div>
+                        <input type="text">
+                        <p>（発話結果がくる）</p>
+                    </div>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
