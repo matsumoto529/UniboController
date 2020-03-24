@@ -4,18 +4,51 @@
         <meta charset="utf-8">
         <title>Uniboコントローラ</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="js/index.js">
         <script>
+            var ip;
+            var url;
             function connect(){
-            var ip = document.getElementById('uniboIP').value;
-            console.log(ip);
-            var url = "http://" + ip + ":8080/api/talk";
-            console.log(url);
-            var oReq = new XMLHttpRequest();
-            oReq.addEventListener("load", connect);
-            oReq.open("POST", url);
-            oReq.send();
-        }
+                ip = document.getElementById('uniboIP').value;
+                url = "http://" + ip + ":8080/api/controller";
+                var oReq = new XMLHttpRequest();
+                oReq.addEventListener("load", connect);
+                // oReq.onreadystatechange = function(){
+                //     if(oReq.withCredentials === false){
+                //         document.getElementById("connectedText").innerHTML = "<span style='color: blue;'>接続済</span>";
+                //         callback(oReq.readyState);
+                //     } else if(oReq.withCredentials !== false) {
+                //         console.log(oReq);
+                //         document.getElementById("connectedText").innerText = "接続失敗";
+                //     }
+                // }
+                oReq.open("POST", url);
+                console.log(oReq);
+                oReq.send("テスト");
+                oReq.onreadystatechange = connectedNext();
+            }
+            function connectedNext(){
+                document.getElementById("connectedText").innerHTML = "<span style='color: blue;'>接続済</span>";
+                callback(oReq.readyState);
+            }
+            function visit(){
+                var oReq = new XMLHttpRequest();
+                oReq.addEventListener("load", connect);
+                oReq.open("POST", url);
+                oReq.send("こんにちは");
+            }
+            function discharge(){
+                var oReq = new XMLHttpRequest();
+                oReq.addEventListener("load", connect);
+                oReq.open("POST", url);
+                oReq.send("さようなら");
+            }
+            function utterance(){
+                var serif = document.getElementById('utterance_text').value;
+                var oReq = new XMLHttpRequest();
+                oReq.addEventListener("load", connect);
+                oReq.open("POST", url);
+                oReq.send(serif);
+            }
         </script>
     </head>
     <body>
@@ -29,7 +62,7 @@
                     <div>
                         <label class="text_size">IPアドレス</label><br>
                         <div><input type="text" id="uniboIP"></div>
-                        <p>（接続状態のものがくる）</p>
+                            <div id="connectedText" class="connected" style="color: red;">未接続</div>
                         <input type="button" value="接続テスト" onclick="connect()" class="text_size">
                     </div>
                 </div>
@@ -38,7 +71,7 @@
                 <div class="div_visit">
                     <h2>来院時発話</h2>
                     <div>
-                        <input type="button" value="こんにちは" class="text_size">
+                        <input type="button" value="こんにちは" onclick="visit()" class="text_size">
                     </div>
                 </div>
             </form>
@@ -46,7 +79,7 @@
                 <div class="div_discharge">
                     <h2>退院時発話</h2>
                     <div>
-                        <input type="button" value="さようなら" class="text_size">
+                        <input type="button" value="さようなら" onclick="discharge()" class="text_size">
                     </div>
                 </div>
             </form>
@@ -54,8 +87,9 @@
                 <div class="div_utterance">
                     <h2>自由発話</h2>
                     <div>
-                        <input type="text">
+                        <input type="text" placeholder="セリフを入力してください" value="" id="utterance_text">
                         <p>（発話結果がくる）</p>
+                        <input type="button" value="発話" onclick="utterance()" class="text_size">
                     </div>
                 </div>
             </form>
