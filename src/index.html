@@ -48,6 +48,8 @@
                 oReq.addEventListener("load", connect);
                 oReq.open("POST", url);
                 oReq.send(serif);
+
+                document.getElementById("utterance").innerHTML = "<span>" + serif + "</span>";
             }
         </script>
     </head>
@@ -88,7 +90,7 @@
                     <h2>自由発話</h2>
                     <div>
                         <input type="text" placeholder="セリフを入力してください" value="" id="utterance_text">
-                        <p>（発話結果がくる）</p>
+                        <p id="utterance"><br></p>
                         <input type="button" value="発話" onclick="utterance()" class="text_size">
                     </div>
                 </div>
