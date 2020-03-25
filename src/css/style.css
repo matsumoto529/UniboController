@@ -16,25 +16,25 @@ body{
     position: absolute;
     top: 0px;
     left: 30px;
-    width: 220px;
+    width: 215px;
 }
 .div_visit{
     position: absolute;
     top: 0px;
     left: 250px;
-    width: 220px;
+    width: 215px;
 }
 .div_discharge{
     position: absolute;
     top: 0px;
     left: 470px;
-    width: 220px;
+    width: 215px;
 }
 .div_utterance{
     position: absolute;
     top: 0px;
     left: 690px;
-    width: 220px;
+    width: 215px;
 }
 .text_size{
     font-size: 20px;
@@ -63,6 +63,7 @@ h1{
 }
 h2{
     color: #1e90ff;
+    border-bottom: solid 1px #1e90ff;
 }
 .title{
     background-color: #1e90ff;
