@@ -7,10 +7,10 @@
         <script>
             var ip;
             var url;
+            var oReq = new XMLHttpRequest();
             function connect(){
                 ip = document.getElementById('uniboIP').value;
                 url = "http://" + ip + ":8080/api/controller";
-                var oReq = new XMLHttpRequest();
                 oReq.addEventListener("load", connect);
                 // oReq.onreadystatechange = function(){
                 //     if(oReq.withCredentials === false){
@@ -30,20 +30,17 @@
                 document.getElementById("connectedText").innerHTML = "<span style='color: blue;'>接続済</span>";
             }
             function visit(){
-                var oReq = new XMLHttpRequest();
                 oReq.addEventListener("load", connect);
                 oReq.open("POST", url);
                 oReq.send("こんにちは");
             }
             function discharge(){
-                var oReq = new XMLHttpRequest();
                 oReq.addEventListener("load", connect);
                 oReq.open("POST", url);
                 oReq.send("さようなら");
             }
             function utterance(){
                 var serif = document.getElementById('utterance_text').value;
-                var oReq = new XMLHttpRequest();
                 oReq.addEventListener("load", connect);
                 oReq.open("POST", url);
                 oReq.send(serif);
@@ -57,7 +54,7 @@
             <h1 class="header_title">Uniboコントローラ</h1>
         </div>
         <div class="controller_all">
-            <form class="form_conf">
+            <form class="box">
                 <div class="div_connect">
                     <h2>Unibo接続</h2>
                     <div>
@@ -68,7 +65,7 @@
                     </div>
                 </div>
             </form>
-            <form class="form_conf">
+            <form class="box">
                 <div class="div_visit">
                     <h2>来院時発話</h2>
                     <div>
@@ -76,7 +73,7 @@
                     </div>
                 </div>
             </form>
-            <form class="form_conf">
+            <form class="box">
                 <div class="div_discharge">
                     <h2>退院時発話</h2>
                     <div>
@@ -84,7 +81,7 @@
                     </div>
                 </div>
             </form>
-            <form class="form_conf">
+            <form class="box">
                 <div class="div_utterance">
                     <h2>自由発話</h2>
                     <div>
